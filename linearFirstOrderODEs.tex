@@ -1,0 +1,71 @@
+%\documentclass[12pt]{article}
+\chapter{Linear First Order ODE}
+%
+%\usepackage[margin=1in]{geometry}
+%\usepackage{amsmath}
+%\usepackage{framed}
+%\usepackage{amsthm}
+%\usepackage{amsfonts}
+%\usepackage{graphicx}
+%\usepackage{tcolorbox}
+%\usepackage{bm}
+%
+%\newtheorem{lem}{Lemma}
+%\newtheorem{define}{Definition}[section]
+%\newtheorem{axim}{Axiom}
+%\newtheorem{soln}{Solution}
+%\newtheorem{thm}{Theorem}
+%\newtheorem{ex}{Example}[section]
+%
+%\begin{document}
+
+
+\section{Linearity}
+
+\begin{leftbar}
+\begin{define}
+	An ODE is said to be linear if the principle of superposition applies. Let there be a function F. If the following hold, it is said linear.
+	\begin{enumerate}
+		\item $F(\alpha x) = \alpha F(x)$
+		\item $F(x_{1} + x_{2}) = F(x_{1}) + F(x_{2})$
+		
+	And in general
+	\[
+	F(\alpha x_{1} + \beta x_{2}) = \alpha F(x_{1}) + \beta F(x_{2})
+	\]
+	\end{enumerate}
+\end{define}
+\end{leftbar}
+
+\section{Mass in free fall}
+	Consider a mass in free fall. From Newton's laws, the ODE describing it's behavior is
+
+\[
+m\dot{v} + kv = -g
+\]
+
+We can simplify this by making dividing by m and making the substitution $\tilde{k} = \frac{k}{m}$ and $\tilde{g} = \frac{g}{m}$ to get.
+
+\[
+\dot{v}+\tilde{k}=-\tilde{g}
+\]
+
+Notice that the left hand side looks very close to a product rule. If we multiple by an integrating factor $I=e^{\tilde{k}t}$, we can change this into an actual product rule.
+
+\[
+\begin{aligned}
+I[\dot{v}+\tilde{k} &= -\tilde{g}]\\
+\dot{v}I+\tilde{k}I &= -\tilde{g}I\\
+\frac{d}{dt}(Iv) &= -I\tilde{g}
+\end{aligned}
+\]
+
+Now that we have an actual product rule on the left hand side, we can do an integration to get rid of it. Note the bounds on our integral. This is a real physical problems with logical bounds.
+
+\[
+\begin{aligned}
+\frac{d}{dt}(Iv) &= -I\tilde{g}\\
+\int_{t_{0}}^{t}\frac{d}{dt}(I(s)v(s))ds &= \int_{t_{0}}^{t}-I(s)\tilde{g}ds
+\end{aligned}
+\]
+%\end{document}

@@ -1,0 +1,59 @@
+\documentclass[12pt]{report}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{tikz} % Put letters in circles
+\usepackage{bm} % bold math symbols
+\usepackage{amsfonts}
+\usepackage{framed}
+\usepackage[toc,page]{appendix}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{define}{Definition}[section]
+\newtheorem{axim}{Axiom}
+\newtheorem{soln}{Solution}
+\newtheorem{thm}{Theorem}
+\newtheorem{ex}{Example}[section]
+
+% Make the leftbar red
+\renewenvironment{leftbar}[1][\hsize]
+{%
+	\def\FrameCommand
+	{%
+		{\color{green}\vrule width 3pt}%
+		\hspace{0pt}%must no space.
+		\fboxsep=\FrameSep\colorbox{white}%
+	}%
+	\MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}
+{\endMakeFramed}
+
+% Add encircle command
+\newcommand\encircle[1]{%
+	\tikz[baseline=(X.base)] 
+	\node (X) [draw, shape=circle, inner sep=0] {\strut #1};}
+
+
+\begin{document}
+
+\tableofcontents
+
+\part{First Order Linear ODEs}
+    \include{linearFirstOrderODEs}
+\end{document}
+
+
+
