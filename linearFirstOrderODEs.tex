@@ -65,7 +65,20 @@ Now that we have an actual product rule on the left hand side, we can do an inte
 \[
 \begin{aligned}
 \frac{d}{dt}(Iv) &= -I\tilde{g}\\
-\int_{t_{0}}^{t}\frac{d}{dt}(I(s)v(s))ds &= \int_{t_{0}}^{t}-I(s)\tilde{g}ds
+\int_{t_{0}}^{t}\frac{d}{dt}(I(s)v(s))ds &= -\tilde{g}\int_{t_{0}}^{t}I(s)ds\\
+(I(s)v(s))|_{t_{0}}^{t} &= -\tilde{g}\int_{t_{0}}^{t}I(s)ds\\
+I(t)v(t)-I(t_{0})v(t_{0}) &= -\tilde{g}\int_{t_{0}}^{t}I(s)ds\\
+I(t)v(t) &= -\tilde{g}\int_{t_{0}}^{t}I(s)ds + v(t_{0})I(t_{0})\\
+v(t) &= -I^{-1}(t)\tilde{g}\int_{t_{0}}^{t}I(s)ds + I^{-1}v(t_{0})I(t_{0})
 \end{aligned}
 \]
+
+Now we can substitute back in our actual integration factor.
+\[
+\begin{aligned}
+v(t) &= -e^{-\tilde{k}t}\tilde{g}\int_{t_{0}}^{t}e^{\tilde{k}s}ds + e^{-\tilde{k}t}v(t_{0})e^{\tilde{k}t_{0}}\\
+v(t) &= -e^{-\tilde{k}t}\tilde{g}\int_{t_{0}}^{t}e^{\tilde{k}s}ds + v(t_{0})e^{\tilde{k}(t_{0}-t)}
+\end{aligned}
+\]
+
 %\end{document}
